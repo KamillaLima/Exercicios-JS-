@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex28.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./parte1.html" target="_blank">PARTE 1 </a></li>
+            <li>PARTE 2 </li>
+            <li>PARTE 3 </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 09</h2>
+
+        <br>
+
+        <h3>Pedra,papel,tesoura</h3>
+        <br>
+        <br>
+
+        <img id="pc">
+        <br>
+        <br>
+        <label for="escolha"><img src="./papel.png"></label>
+        <input type="radio" id="papel" name="escolha">
+
+        <label for="escolha"><img src="./pedra.png"></label>
+        <input type="radio" id="pedra" name="escolha">
+
+        <label for="escolha"><img src="./tesoura.png"></label>
+        <input type="radio" id="tesoura" name="escolha">
+        <br>
+        <Br>
+
+
+
+        <input type="button" onclick="sortear()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+
+        <div id="resposta"></div>
+
+    </div>
+
+    <script>
+        function sortear() {
+          
+            var sorteio = Math.round(Math.random() * 2)
+            var pc = window.document.getElementById('pc')
+            var escolha = window.document.getElementsByName('escolha')
+            var resposta = window.document.getElementById('resposta')
+            switch(sorteio){
+                case 0:
+                    document.getElementById('pc').src ="./pedraInvertida.png";
+                    break;
+
+                case 1:
+                document.getElementById('pc').src ="./tesouraInvertida.png";
+                    break;
+            
+                case 2 :
+                    document.getElementById('pc').src ="./papelInvertido.png";
+                    break;
+                }
+
+            if(escolha[0].checked){
+               if(sorteio==0){
+               resposta.innerHTML = ' ponto para humano'}
+               else if(sorteio==1){
+                resposta.innerHTML = ' ponto para robo'
+               }else{
+                resposta.innerHTML = 'EMPATE'
+               }
+
+
+            }
+            else if(escolha[1].checked){
+
+                if(sorteio==0){
+                    resposta.innerHTML=  'EMPATE'
+                }
+                else if(sorteio==1){
+                    resposta.innerHTML = 'ponto para humano'
+                }
+               else{
+                resposta.innerHTML = ' ponto para robo '
+               }
+
+
+               
+            }else if(escolha[2].checked){
+                if(sorteio==0){
+                    resposta.innerHTML=  'ponto para robo'
+                }
+                else if(sorteio==1){
+                    resposta.innerHTML = 'EMPATE'
+                }
+               else{
+                resposta.innerHTML = ' ponto para humano '
+               }
+            }
+
+
+        }
+
+
+        function limpar() {
+           var foto = window.document.getElementById('pc')
+           var resposta = window.document.getElementById('resposta')
+           foto.src = " ";
+           resposta.innerHTML = ' ';
+            
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

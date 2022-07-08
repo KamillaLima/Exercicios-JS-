@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./parte1.html" target="_blank">PARTE 1 </a></li>
+            <li>PARTE 2 </li>
+            <li>PARTE 3 </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 10</h2>
+
+        <br>
+
+        <h3>Ano Bissexto</h3>
+        <br>
+        <input type="text" id="numero" placeholder="Informe o ano">
+        <br><br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function descobrir() {
+            var resposta = window.document.getElementById('resposta')
+            var num = window.document.getElementById('numero')
+            if (num % 4 == 0 && num % 100 != 0 || num % 400 == 0){
+                resposta.innerHTML = `O ano ${num} é bissexto!`
+            }else{
+                resposta.innerHTML = `O ano ${num} NAO é bissexto`
+            }
+
+        }
+
+        function limpar() {
+            resposta.innerHTML = " "
+            numero.value = ' '
+            numero.focus()
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ex01.css">
+</head>
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./parte1.html" target="_blank">PARTE 1 </a></li>
+            <li>PARTE 2 </li>
+            <li>PARTE 3 </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 07</h2>
+      
+        <br>
+
+        <h3>Reajuste salarial</h3>
+        <label for="valor">Salário atual : R$</label>
+        <input type="text" id="valor">
+        <br>
+        <br>
+
+        <input type="button" onclick="calcular()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <br>
+        <div id="resposta"></div>
+    </div>
+    <script>
+        function calcular() {
+        var v = window.document.getElementById('valor')
+        var valor = String(v.value)
+        var tirar = valor.replace(",",".")
+        var fim = Number(tirar)
+        var ajuste = (fim*115)/100
+
+        var resposta = window.document.getElementById('resposta')
+        resposta.innerHTML += `Após um reajuste salarial,o seu salário mensal será de R$${ajuste.toFixed(2)}` 
+        }
+        function limpar(){
+            var resposta = window.document.getElementById('resposta')
+            resposta.innerHTML = ' '
+           
+        }
+    </script>
+</body>
+</html>

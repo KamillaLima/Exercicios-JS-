@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ex01.css">
+</head>
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./parte1.html" target="_blank">PARTE 1 </a></li>
+            <li>PARTE 2 </li>
+            <li>PARTE 3 </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 07</h2>
+      
+        <br>
+
+        <h3>Calcular</h3>
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor">
+        <br>
+        <br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <br>
+        <div id="resposta"></div>
+    </div>
+    <script>
+        function descobrir() {
+        var v = window.document.getElementById('valor')
+        var valor = String(v.value)
+        var tirar = valor.replace(",",".")
+        var fim = Number(tirar)
+        var resposta = window.document.getElementById('resposta')
+        resposta.innerHTML+= `${fim} x 1 = ${fim} <br>`
+        resposta.innerHTML+= `${fim} x 2 = ${fim*2}<br>`
+        resposta.innerHTML+= `${fim} x 3 = ${fim*3}<br>`
+        resposta.innerHTML+= `${fim} x 4 = ${fim*4}<br>`
+        resposta.innerHTML+= `${fim} x 5 = ${fim*5}<br>`
+        resposta.innerHTML+= `${fim} x 6 = ${fim*6}<br>`
+        resposta.innerHTML+= `${fim} x 7 = ${fim*7}<br>`
+        resposta.innerHTML+= `${fim} x 8 = ${fim*8}<br>`
+        resposta.innerHTML+= `${fim} x 9 = ${fim*9}<br>`
+        resposta.innerHTML+= `${fim} x 10 = ${fim*9}<br>`
+        }
+        function limpar(){
+            var resposta = window.document.getElementById('resposta')
+            resposta.innerHTML = ' '
+           
+        }
+    </script>
+</body>
+</html>

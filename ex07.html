@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ex01.css">
+</head>
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./parte1.html" target="_blank">PARTE 1 </a></li>
+            <li>PARTE 2 </li>
+            <li>PARTE 3 </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 07</h2>
+  
+        <br>
+
+        <h3>Média aritmética</h3>
+        <label for="valor">Valor 1:</label>
+        <input type="text" id="valor">
+        <br>
+        <br>
+        <label for="valor2">Valor 2:</label>
+        <input tpye="text" id="valor2">
+        <br><br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <div id="resposta"></div>
+    </div>
+    <script>
+        function descobrir() {
+        var v = window.document.getElementById('valor')
+        var valor = String(v.value)
+        var tirar = valor.replace(",",".")
+        var fim = Number(tirar)
+
+
+
+
+        var v2 = window.document.getElementById('valor2')
+        var valor2 = String(v2.value)
+        var tirar2 = valor2.replace(",",".")
+        var fim2 = Number(tirar2)
+
+        var media = (fim + fim2)/2
+        var resposta = window.document.getElementById('resposta')
+        resposta.innerHTML = `${media.toFixed(2)}`
+    
+        }
+        function limpar(){
+            var resposta = window.document.getElementById('resposta')
+            resposta.innerHTML = ' '
+           
+        }
+    </script>
+</body>
+</html>

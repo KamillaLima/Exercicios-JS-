@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./parte1.html" target="_blank">PARTE 1 </a></li>
+            <li>PARTE 2 </li>
+            <li>PARTE 3 </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 10</h2>
+
+        <br>
+
+        <h3>Radar eletrônico</h3>
+        <br>
+        <input type="text" id="velocidade" placeholder="Velocidade atual em KM/h ">
+        <br><br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function descobrir() {
+            var velocidade = window.document.getElementById('velocidade')
+            var vel = Number(velocidade.value)
+            var resposta = window.document.getElementById('resposta')
+            if (vel>80){
+                resposta.style.color = 'red'
+                resposta.innerHTML += 'Você ultrapassou o valor permitido! <br>'
+                var multa = (vel-80)*7
+                resposta.style.fontSize = '0.8rem'
+
+                resposta.innerHTML += ` Deverá pagar uma multa no valor de <strong>R$${multa}!</strong>`
+                
+            }else{
+                resposta.innerHTML = `Dirija com segurança!`
+
+            }
+
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = " "
+            velocidade.value = ' '
+            velocidade.focus()
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
