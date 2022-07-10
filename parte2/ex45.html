@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 12</h2>
+
+        <br>
+
+        <h3>JOKENPÔ</h3>
+        <br>
+       
+        <label>Qual será sua jogada?</label>
+        <br><br>
+        <input type="radio" id="pedra" name="opcoes">
+        <label for="opcoes">✊</label>
+        <input type="radio" id="papel" name="opcoes">
+        <label for="opcoes">🖐️</label>
+        <input type="radio" id="tesoura"  name="opcoes">
+        <label for="opcoes">✌️</label>
+
+
+        <br><br>
+        <input type="button" onclick="jogar()" value="jogar">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function jogar() {
+            var robo = Math.round(Math.random() * 2)
+            console.log(robo)
+            var humano = window.document.getElementsByName('opcoes')
+            var resposta = window.document.getElementById('resposta')
+            if ((humano[0].checked && robo==0 )|| (humano[1].checked && robo==1) || (humano[2].checked && robo==2)){
+                resposta.innerHTML += `EMPATE` 
+
+            }
+
+            else if((humano[1].checked && robo==0)|| (humano[0].checked && robo==2) || (humano[2].checked && robo==1)){
+                resposta.innerHTML += 'PONTO PARA HUMANO👨'
+            }
+
+            else{
+                resposta.innerHTML += `PONTO PARA ROBO🤖`
+            }
+
+
+
+
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = ""
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

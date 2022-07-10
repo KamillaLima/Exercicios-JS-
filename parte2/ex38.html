@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 12</h2>
+
+        <br>
+
+        <h3> Comparando números </h3>
+        <br>
+        <input type="text" id="numero" placeholder="Primeiro valor">
+        <br><br>
+        <input type="text" id="numero2" placeholder="Segundo valor">
+        <br><br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function descobrir() {
+            var num1 = window.document.getElementById('numero').value
+            var num2 = window.document.getElementById('numero2').value
+            var resposta = window.document.getElementById('resposta')
+            var Num1 = num1.replace(",",".")
+            var NUMERO1 = Number(Num1)
+            var Num2 = num2.replace(",",".")
+            var NUMERO2 = Number(Num2)
+            if(NUMERO1 > NUMERO2){
+                resposta.innerHTML = `O valor <mark>${NUMERO1}</mark> é maior que o valor <mark>${NUMERO2}</mark>`
+            }else if(NUMERO1 == NUMERO2){
+                resposta.innerHTML = `O valor <mark>${NUMERO1}</mark> é igual ao valor <mark>${NUMERO2}</mark>`
+            }else{
+                resposta.innerHTML = `O valor <mark>${NUMERO2}</mark> é maior que o valor <mark>${NUMERO1}</mark>`
+            }
+            
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = " "
+            numero.value= ""
+            numero2.value =""
+            numero.focus()
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

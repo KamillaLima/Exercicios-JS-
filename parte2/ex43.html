@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 12</h2>
+
+        <br>
+
+        <h3>IMC</h3>
+        <br>
+        <input type="text" id="altura" placeholder="Informe a sua altura">
+        <br><br>
+        <input type="text" id="peso" placeholder="Informe o seu peso">
+        <br>
+        <br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function descobrir() {
+            var resposta = window.document.getElementById('resposta')
+            var altura = window.document.getElementById('altura').value
+            var peso = window.document.getElementById('peso').value
+            var Altura = altura.replace(",", ".")
+            var Peso = peso.replace(",", ".")
+            var A = Number(Altura)
+            var P = Number(Peso)
+            var imc = P / (A * A)
+            console.log(imc)
+            if (imc < 18.5 || imc > 25) {
+                resposta.style.color = 'red'
+                resposta.innerHTML = `PROCURE UM ESPECIALISTA`
+            }
+            else{
+                resposta.style.color = 'blue'
+                resposta.innerHTML = `PESO IDEAL`
+            }
+
+
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = " "
+            altura.value = ""
+            peso.value = ""
+            altura.focus()
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

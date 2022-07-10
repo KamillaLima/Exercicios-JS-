@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+<body>
+    <header><h1>Exercícios de JavaScript</h1></header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 08</h2>
+      
+        <br>
+
+        <h3>Catetos e hipotenusa </h3>
+        <br>
+        <input type="text" id="numero"placeholder="Cateto adjacente">
+        <input type="text" id="numero2" placeholder="Cateto oposto">
+        <br><br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+        <script>
+            var numero = window.document.getElementById('numero')
+            var numero2 = window.document.getElementById('numero2')
+            var resposta = window.document.getElementById('resposta')
+            function descobrir(){
+                    var parte1 = String(numero.value)
+                    var transformar = parte1.replace(",",".")
+                    var parte2 = Number(transformar)
+                    
+
+                    var pt2 = String(numero2.value)
+                    var transformar2 = pt2.replace(",",".")
+                    var pt3 = Number(transformar2)
+
+                    var hipotenusa = Math.hypot(parte2  , pt3)
+                    resposta.innerHTML = `A hipotenusa do triângulo tem como valor ${hipotenusa.toFixed(2)}`
+            }
+             
+        
+
+              function limpar(){
+            resposta.innerHTML = " "
+            numero.value = " "
+            numero2.value = " "
+            numero.focus()
+        
+        }
+        </script>
+
+        
+      
+   
+</body>
+</html>

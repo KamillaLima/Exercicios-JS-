@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 12</h2>
+
+        <br>
+
+        <h3> Aprovando Empréstimo </h3>
+        <br>
+        R$ <input type="text" id="casaValor" placeholder="Valor da residência ">
+        <br>
+        <input type="text" id="anos" placeholder="Tempo do financiamento(em anos) ">
+        <br>
+        R$ <input type="text" id="salario" placeholder="Salário atual ">
+        <br><br>
+        <input type="button" onclick="descobrir()" value="descobrir">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function descobrir() {
+            var anos = window.document.getElementById('anos').value
+            var ANOS = Number(anos)
+
+            var casaValor = window.document.getElementById('casaValor').value
+            var ValorCasa = casaValor.replace(",",".")
+            var CasaValor = Number(ValorCasa)
+
+            var salario = window.document.getElementById('salario').value
+            var SalarioConverte = salario.replace(",",".")
+            var Salario = Number(SalarioConverte)
+
+            var resposta = window.document.getElementById('resposta')
+            var salarioMetade = Salario *0.3
+            var prestacao = CasaValor/(ANOS * 12)
+
+            
+            if (prestacao.toFixed(2) > salarioMetade.toFixed(2)){
+                resposta.innerHTML = `Infelizmente o seu financiamento não foi aprovado`
+            }else{
+                resposta.innerHTML += `O seu financiamento foi aprovado!`
+                resposta.innerHTML += `As parcelas serão no valor de R$${prestacao}`
+            }
+
+            
+            
+            
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = " "
+            anos.value= ""
+            casaValor.value = ""
+            salario.value = ""
+            casaValor.focus()
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

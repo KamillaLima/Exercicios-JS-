@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+<body>
+    <header><h1>Exercícios de JavaScript</h1></header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+    <div id="container">
+        <h2>AULA 07</h2>
+      
+        <br>
+
+        <h3>Aluguel de automóveis</h3>
+        <label>Tipo de automóvel escolhido:</label>
+        <input type="radio" name="automovel" value="moto">
+        <label for="automovel">Moto</label>
+        <input type="radio" name="automovel" value="carro">
+        <label for="automovel">Carro</label>
+        <br>
+        <br>
+        <label for="dias"></label><input type="text" id="dias">dias 
+        <br>
+        <br>
+        <label for="km"></label><input type="text" id="km">Km
+        <br><br>
+        <input type="button" onclick="calcular()" value="calcular">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+        <script>
+             
+             function calcular(){
+                var dias=window.document.getElementById('dias')
+                var km = window.document.getElementById('km')
+                var diasConvertido = Number(dias.value)
+                var kmConvertido = Number(km.value)
+                var resposta = window.document.getElementById('resposta')
+                var check = window.document.getElementsByName('automovel')
+                if (check[0].checked){
+                    var total = ((diasConvertido*60) + (kmConvertido * 0.15))/2
+                    resposta.innerHTML = `O valor a ser pago é de ${total.toFixed(2)}`
+
+                }
+                else{
+                    var total =(diasConvertido*60) + (kmConvertido * 0.15)
+                    resposta.innerHTML = `O valor a ser pago é de ${total.toFixed(2)}`
+                }
+             }
+
+              function limpar(){
+                var dias=window.document.getElementById('dias')
+                var km = window.document.getElementById('km')
+                var resposta = window.document.getElementById('resposta')
+                var check = window.document.getElementsByName('automovel')
+
+            resposta.innerHTML = " "
+            dias.value = " "
+            dias.focus()
+            km.value=" "
+        }
+        </script>
+
+        
+      
+   
+</body>
+</html>

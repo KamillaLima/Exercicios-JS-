@@ -57,3 +57,7 @@ img{
     width: 20%;
     height: 20%;
 }
+
+.esconder{
+    display: none;
+}
