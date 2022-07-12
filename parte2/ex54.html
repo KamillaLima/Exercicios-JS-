@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 13</h2>
+
+        <br>
+
+        <h3> Grupo da maioridade</h3>
+
+        <br><br>
+        <input type="button" onclick="calcular()" value="calcular">
+       
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            var ano = new Date();
+            var hoje = ano.getFullYear()
+            var contMaior = 0
+            var contMenor = 0
+            var resposta = window.document.getElementById('resposta')
+            
+            for(var i = 1 ; i <=7;i++){
+                 var nascimento = parseInt(prompt(`Informe a date de nascimento da ${i} º pessoa:`))
+                 if (hoje-nascimento <= 17){
+                        contMenor++
+                        
+                 }else{
+                    contMaior++
+                    
+                 }
+            }
+           resposta.innerHTML = `${contMaior} MAIOR(ES) DE IDADE<br> ${contMenor} MENOR(ES) DE IDADE`
+        }
+
+
+        
+    </script>
+
+
+
+
+</body>
+
+</html>

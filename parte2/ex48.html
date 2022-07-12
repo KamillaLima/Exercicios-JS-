@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 13</h2>
+
+        <br>
+
+        <h3>Soma ímpares múltiplos de três</h3>
+        <br>
+        <form>
+            <input type="text" id="i" placeholder="Valor de início">
+            <br><br>
+            <input type="text" id="f" placeholder="Valor final">
+            
+        </form>
+
+        <br><br>
+        <input type="button" onclick="calcular()" value="calcular">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            var i = window.document.getElementById('i').value
+            var f = window.document.getElementById('f').value
+            var resposta = window.document.getElementById('resposta')
+            var inicio = i.replace(",",".")
+            var final = f.replace(",",".")
+            var INICIO  = Number(inicio)
+            var FINAL = Number(final-1)
+            var soma = 0
+            var contagem = 0
+            for(var c = INICIO ; c<=FINAL;){
+                c++
+                if (c%2!=0){
+                    if (c%3==0){
+                        soma +=c
+                        contagem++
+                    }
+                }
+            }
+
+            resposta.innerHTML = `a soma de ${contagem} valores resultou em ${soma}`
+
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = ""
+            i.value = ""
+            f.value = ""
+            p.value = ""
+            i.focus()
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ex01.css">
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios de JavaScript</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../parte1/parte1.html" target="_blank">PARTE 1 </a></li>
+            <li><a href="../parte2/parte2.html" target="_blank">PARTE 2 </a></li>
+            <li><a href="../parte3/parte3.html" target="_blank">PARTE 3</a> </li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>AULA 13</h2>
+
+        <br>
+
+        <h3>Maior e menor da sequência</h3>
+
+
+        <br><br>
+        <input type="button" onclick="calcular()" value="calcular">
+        <input type="button" onclick="limpar()" value="limpar">
+        <br>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            var soma = 0
+            var contagem = 0
+            var cont = 0
+           for(var c = 1;c<=5;c++){
+            var num = Number(prompt(`Digite o ${c}º peso:`))
+            if(c==1){
+                maior = num
+                menor = num
+            }else{
+                if(maior<num){
+                    maior=num
+                }if(menor>num){
+                    menor=num
+                }
+            }
+           }
+
+            resposta.innerHTML = `O maior peso foi ${maior}KG e o menor peso foi ${menor}KG `
+
+        }
+
+
+        function limpar() {
+            resposta.innerHTML = ""
+           
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
